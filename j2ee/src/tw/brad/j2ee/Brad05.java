@@ -2,6 +2,7 @@ package tw.brad.j2ee;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.net.URLDecoder;
 import java.util.Enumeration;
 
 import javax.servlet.ServletException;
@@ -26,6 +27,7 @@ public class Brad05 extends HttpServlet {
 			throws ServletException, IOException {
 		
 		response.setContentType("text/html; charset=UTF-8");
+
 		PrintWriter pw = response.getWriter();
 		pw.write("Hello, 您好:" + what + "<br />");
 		
@@ -33,14 +35,11 @@ public class Brad05 extends HttpServlet {
 		while (params.hasMoreElements()) {
 			String key = params.nextElement();
 			String value = request.getParameter(key);
-			pw.write(key + ":" + value  + "<br />");
-			System.out.println(value);
+			String nvalue = new String(value.getBytes("ISO-8859-1"), "UTF-8");
+			
+			pw.write(key + ":" + nvalue + "<br />");
+			
 		}
-		
-		
-		
-		
-		
 		pw.flush();
 		pw.close();
 		
