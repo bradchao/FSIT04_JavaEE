@@ -2,6 +2,7 @@ package tw.brad.j2ee;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -26,7 +27,20 @@ public class Brad05 extends HttpServlet {
 		
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter pw = response.getWriter();
-		pw.write("Hello, 您好:" + what);
+		pw.write("Hello, 您好:" + what + "<br />");
+		
+		Enumeration<String> params = request.getParameterNames();
+		while (params.hasMoreElements()) {
+			String key = params.nextElement();
+			String value = request.getParameter(key);
+			pw.write(key + ":" + value  + "<br />");
+			System.out.println(value);
+		}
+		
+		
+		
+		
+		
 		pw.flush();
 		pw.close();
 		
