@@ -5,4 +5,10 @@
     <param-name>file-upload</param-name>
     <param-value>C:/Users/user/git_Javaee/j2ee/WebContent/upload</param-value>
   </context-param>
+
+  <context-param>
+    <description>我的畫面樣板目錄</description>
+    <param-name>template-path</param-name>
+    <param-value>C:\Users\user\git_Javaee\j2ee\WebContent\temps</param-value>
+  </context-param>
 </web-app>
