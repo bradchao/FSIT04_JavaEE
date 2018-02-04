@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Collection;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -23,13 +25,18 @@ public class Brad12 extends HttpServlet {
 		
 		String uploadPath = getServletContext().getInitParameter("file-upload");
 		System.out.println(uploadPath);
+
 		
 		Part upload = request.getPart("upload");
-		String filename = upload.getSubmittedFileName();
+		//String filename = upload.getSubmittedFileName();
+		String header = upload.getHeader("content-disposition");
+		String filename = BradAPI.getHeaderFilename(header);
+		
 		long size = upload.getSize();
 		pw.write(filename + ":" + size);
 		
 		//byte[] buf = new byte[(int)size];
+		
 		BufferedInputStream bin = 
 				new BufferedInputStream(upload.getInputStream()); 
 		byte[] buf = bin.readAllBytes();
@@ -40,11 +47,6 @@ public class Brad12 extends HttpServlet {
 		fout.write(buf);
 		fout.flush();
 		fout.close();
-		
-		
-		
-		
-		
 		
 	}
 }
