@@ -21,7 +21,7 @@ public class Brad27 extends HttpServlet {
 		String newpasswd = BCrypt.hashpw(passwd, salt);
 		out.println(newpasswd);
 		
-		if (ckPasswd("123456", newpasswd)) {
+		if (BradAPI.ckPasswd("123456", newpasswd)) {
 			out.println("OK");
 		}else {
 			out.println("XX");
@@ -29,15 +29,7 @@ public class Brad27 extends HttpServlet {
 		
 	}
 
-	private static boolean ckPasswd(String org, String cPasswd) {
-		boolean isRight = false;
-		if (cPasswd.startsWith("$2a$")) {
-			isRight = BCrypt.checkpw(org, cPasswd);
-		}
-		
-		return isRight;
-		
-	}
+
 	
 	
 }
