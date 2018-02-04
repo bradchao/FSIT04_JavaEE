@@ -15,12 +15,6 @@ public class BradAPI {
 		}else {
 			retFile = filename;
 		}
-		
-		
-		
-		
-		
-		
 		return retFile;
 	}
 	
