@@ -13,7 +13,7 @@
 	for (int k=0; k<4; k++){
 		out.println("<tr>");
 		for (int j=2; j<=5; j++){
-			out.println("<td>");
+			out.println("<td bgcolor='" + ( (k+j) % 2 != 0 ? "yellow" : "pink") + "'>");
 			int newj = j+k*4;
 			for (int i=1; i<=9; i++){
 				int r = newj * i;
