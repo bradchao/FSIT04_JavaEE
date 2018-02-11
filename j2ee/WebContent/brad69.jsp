@@ -15,6 +15,12 @@
 	Connection conn = DriverManager.getConnection(
 			"jdbc:mysql://localhost/brad", 
 			"root", "root");
+	Statement stmt = conn.createStatement();
+	String sql = "INSERT INTO member (account,passwd,realname) VALUES ('ok','123','456')";
+	stmt.execute(sql);
+
+	
+	
 
 %>
 
