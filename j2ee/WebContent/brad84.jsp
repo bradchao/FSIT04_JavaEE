@@ -11,8 +11,9 @@
 <iii:HelloBrad/>
 <hr />
 <iii:Upper>Brad Chao</iii:Upper>
-
-
-
+<hr>
+<iii:mesg>I am Body</iii:mesg>
+<hr>
+<iii:mesg message="I am Message">你看不到</iii:mesg>
 </body>
 </html>
