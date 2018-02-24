@@ -27,8 +27,6 @@
 	
 		out.println(id + ":" + name + "<br>");
 	}
-
-
 %>
 
 
