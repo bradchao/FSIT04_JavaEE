@@ -6,8 +6,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 </script>
 <script>
+	//var req = new XMLHttpRequest();
+	//req.setRequestHeader("If-Modified-Since","0");
+
+
 	$.ajaxSetup({catch: false});
-	function getData(){
+	function getData(){	
 		$.get("Brad50", function(data, status){
 			if (status == 'success'){
 				$("#mesg").html(data);	
@@ -20,6 +24,14 @@
 		setInterval("getData()", 1*1000);	
 	}
 	
+	function getData2(){
+		$.get("Brad52", function(data, status){
+			
+			$("#mesg").html("ok1");
+		});
+	}
+	
+
 	
 	
 </script>
@@ -27,7 +39,10 @@
 <body>
 <h1>Brad Big Company</h1>
 <hr />
-<input type='button' onclick="start()" value="test1" /><br />
+<button onclick="start()">test1</button><br />
+<div id="mesg"></div>
+<hr />
+<button onclick="getData2()">test2</button><br />
 <div id="mesg"></div>
 
 
