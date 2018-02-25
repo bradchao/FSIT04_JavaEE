@@ -21,6 +21,7 @@
 		<body-content>Scriptless</body-content>
 		<attribute>
 			<name>message</name>
+			<name>var1</name>
 		</attribute>
 	</tag>
 

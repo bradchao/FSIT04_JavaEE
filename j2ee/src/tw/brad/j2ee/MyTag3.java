@@ -10,9 +10,10 @@ import javax.servlet.jsp.tagext.SimpleTagSupport;
 public class MyTag3 extends SimpleTagSupport {
 	StringWriter sw = new StringWriter();
 	private String message;
+	private String var1;
 	
 	public void setMessage(String mesg) {message = mesg;}
-	
+	public void setVar1(String var1) {this.var1 = var1;}
 	
 	@Override
 	public void doTag() throws JspException, IOException {
