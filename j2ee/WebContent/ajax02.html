@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script>
+	$.ajaxSetup({catch: false});
+	function getData(){
+		$.get("Brad50", function(data, status){
+			if (status == 'success'){
+				$("#mesg").html(data);	
+			}
+			
+		});
+	}
+	
+	function start(){
+		setInterval("getData()", 1*1000);	
+	}
+	
+	
+	
+</script>
+</head>
+<body>
+<h1>Brad Big Company</h1>
+<hr />
+<input type='button' onclick="start()" value="test1" /><br />
+<div id="mesg"></div>
+
+
+</body>
+</html>
