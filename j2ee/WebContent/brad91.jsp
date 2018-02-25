@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
+if (session.getAttribute("account") == null) {
+	response.sendRedirect("brad89.jsp");
+	return;
+}
 
 %>
 
@@ -13,7 +17,7 @@
 <body>
 <h1>Brad Big Company</h1>
 <hr />
-Welcome, Member 
+Welcome, ${account }
 <hr />
 <a href="brad87.jsp">Logout</a>
 </body>

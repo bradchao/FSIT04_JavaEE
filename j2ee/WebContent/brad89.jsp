@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="brad90.jsp">
+<form action="brad90.jsp" method="post">
 	<input type="text" name="account" /><br />
 	<input type="password" name="passwd" /><br />
-	<input type="submit" name="Login" />
+	<input type="submit" value="Login" />
 </form>
 
 

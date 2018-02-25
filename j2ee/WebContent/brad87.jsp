@@ -8,6 +8,11 @@
 </head>
 <body>
 <%
+if (session.getAttribute("account") == null) {
+	response.sendRedirect("brad89.jsp");
+	return;
+}
+
 	session.invalidate();
 	response.sendRedirect("brad89.jsp");
 %>
