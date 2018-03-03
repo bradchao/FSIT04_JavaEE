@@ -12,6 +12,9 @@ I am brad93<br />
 	//Integer test1 = (Integer)request.getAttribute("test1");
 	//out.println(test1);
 	
+	request.setAttribute("test1", 200);
+	request.setAttribute("test1", 300);
+	
 	pageContext.setAttribute("test1", 100);
 	session.setAttribute("test1", 200);
 	application.setAttribute("test1", 300);
