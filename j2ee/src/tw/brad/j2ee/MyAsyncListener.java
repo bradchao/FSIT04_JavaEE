@@ -13,6 +13,9 @@ public class MyAsyncListener implements AsyncListener{
 	public void onComplete(AsyncEvent event) throws IOException {
 		AsyncContext asyncContext = event.getAsyncContext();
 		System.out.println("onComplete");
+		
+		List<AsyncContext> asyncs = (List)asyncContext.getRequest().getServletContext().getAttribute("asyncs");
+		asyncs.remove(asyncContext);
 	}
 
 	@Override
